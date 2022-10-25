@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <header>
+    <nav>
+        <img src="/logo.jpg" alt="logo" height="80px" width="80px">
+        <h1>Complaint System</h1>
+        <div class="nav">
+            <a href="/index" class="btn">Home</a>    
+        </div>
+    </nav>
+    {{#if message}}
+        <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
+    <div class="user_login">
+        <div class="heading">
+            <h2>Login</h2>
+            <h3><center>Login with registered admin id and password</center></h3>
+        </div>
+        <div class="form">
+            <form action="/auth/adminlogin" method="POST">
+                <p>
+                    <label for="email">Admin email : </label><br>
+                    <input type="text" name="email" id="email" placeholder="212@HEX1" autocomplete="on" required>
+                </p>
+                <p>
+                    <label for="password">Password : </label><br>
+                    <input type="password" name="password" id="password"required>
+                </p>
+                <button class="btn">Login</button>
+            </form>
+            
+            
+        </div>
+    </div>
+    
+</html>

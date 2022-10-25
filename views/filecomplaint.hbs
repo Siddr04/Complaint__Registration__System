@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Registration</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <header>
+    <nav>
+        <img src="/logo.jpg" alt="logo" height="80px" width="80px">
+        <h1>Complaint System</h1>
+        <div class="nav">
+            <a href="/index" class="btn">Home</a>    
+        </div>
+    </nav>
+    {{#if message}}
+        <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
+    <div class="user_login">
+        <div class="heading">
+            <h2>Complaint</h2>
+            <h3><center>Enter your ID, Address and Complaint</center></h3>
+        </div>
+        <div class="form">
+            <form action="/auth/filecomplaint" method="POST">
+                <p>
+                    <label for="email">Email ID : </label><br>
+                    <input type="text" name="email" id="email" placeholder="212@HEX1" autocomplete="on" required>
+                </p>
+                <p>
+                    <label for="address">Address : </label><br>
+                    <input type="text" name="address" id="address" required>
+                </p>
+                <p>
+                    <label for="complaint">Complaint : </label><br>
+                    <input type="text" name="complaint" id="complaint" required>
+                </p>
+                <button class="btn">Submit</button>
+            </form>
+            
+        </div>
+    </div>
+    
+</html>

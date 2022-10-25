@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint System</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <header>
+    <nav>
+        <img src="/logo.jpg" alt="logo" height="80px" width="80px">
+        <h1>Complaint System</h1>
+        <div class="nav">
+            <a href="/index" class="btn">Home</a>    
+            <a href="/userpage1" class="btn">Back</a>    
+        </div>
+    </nav>
+    <div class="complaint">
+        <div class="heading">
+            <h2>Existing Complaints</h2>
+            
+        </div>
+        <div class="user_details">
+            <table>
+                <tr>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+                {{#if rows}}
+                    {{!-- {{#each rows}} --}}
+                    <tr>
+                        <td>{{rows.[0].user_email}}</td>
+                        <td>{{rows.[0].address}}</td>
+                        
+                    </tr>
+                    {{!-- {{/each}} --}}
+                {{/if}}
+                {{#else}}
+                    <tr>
+                        <td colspan="2">No Data found</td>
+                    </tr>
+                {{/else}}
+            </table> 
+        </div>
+        <div class="table">
+            <table class="user_complaints">
+                <tr>
+                    <!-- <th>Id</th> -->
+                    <!-- <th>Address</th> -->
+                    <th>Complaint</th>
+                    <th>Status</th>
+                </tr>
+                 {{#each rows}}
+                    <tr>
+                        <td>{{this.complaint}}</td>
+                        <td>{{this.status}}</td>
+                    </tr>
+                    {{/each}}        
+            </table>
+        </div>
+        
+        
+    </div>
+
+</html>
