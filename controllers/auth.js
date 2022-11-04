@@ -170,6 +170,12 @@ exports.history=async(req,res)=>{
     const{email}=req.body;
     db.query('select user_email,address,complaint,status from complaint where user_email = ? ',[email],(err,rows)=>{
         if(err){console.log(err);}
+        if(rows.length===0)
+        {
+            res.render('historylogin',{
+                message:'Invalid Email ID !!'
+            })
+        }
         else
         {
             res.render('complaint_history',{rows});
