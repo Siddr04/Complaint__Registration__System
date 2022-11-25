@@ -37,5 +37,9 @@ router.get('/update',(req,res)=>{
 router.get('/userpage1',(req,res)=>{
     res.render('userpage1');
 });
+router.get('/aboutus',(req,res)=>{
+    res.render('aboutus');
+});
+
 
 module.exports=router;
