@@ -59,6 +59,7 @@ exports.login=async (req,res)=>{
     try 
     {
         const{email,password}=req.body;
+        req.session.email=email;
         if(!email || !password)
         {
             return res.render('userlogin',{
@@ -127,7 +128,7 @@ exports.complaint=async (req,res)=>{
 
     try 
     {
-        const{email,address,complaint}=req.body;
+        const{address,complaint}=req.body;
         // if(!email || !address ||!complaint)
         // {
         //     return res.render('filecomplaint',{
@@ -148,7 +149,7 @@ exports.complaint=async (req,res)=>{
             
         //     }
         // });
-        db.query('insert into complaint set ?',{user_email:email,address:address,complaint:complaint},(error,results)=>{
+        db.query('insert into complaint set ?',{user_email:req.session.email,address:address,complaint:complaint},(error,results)=>{
             if(error)
             {
                 console.log(error);
@@ -167,8 +168,8 @@ exports.complaint=async (req,res)=>{
 }
 
 exports.history=async(req,res)=>{
-    const{email}=req.body;
-    db.query('select user_email,address,complaint,status from complaint where user_email = ? ',[email],(err,rows)=>{
+    // const email=req.session.email;
+    db.query('select user_email,address,complaint,status from complaint where user_email = ? ',[req.session.email],(err,rows)=>{
         if(err){console.log(err);}
         if(rows.length===0)
         {

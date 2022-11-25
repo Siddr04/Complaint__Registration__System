@@ -24,8 +24,15 @@
     </nav>
     <h3>View or Register Complaint</h3>
     <div class="login_container">
-        <a href="/filecomplaint" class="btn">File a new complaint</a>
-        <a href="/historylogin" class="btn">View Existing Complaint</a>
+        <form action="/filecomplaint">
+            {{!-- <a href="/filecomplaint" class="btn">File a new complaint</a> --}}
+            <button class="btn1">New Complaint</button>
+        </form>
+        
+        <form action="/auth/historylogin" method="post">
+            <button class="btn1">View Complaint</button>
+        </form>
+        
     </div>
 
 </html>

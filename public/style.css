@@ -38,6 +38,7 @@ nav {
     width: 143px;
     text-align: center;
     margin: 0 auto;
+    font-size: large;
 }
 
 
@@ -211,7 +212,7 @@ h3 {
 
 .form .btn{
     width: 427px;
-    /* height: 56px; */
+    height: 56px;
 
 }
 
