@@ -22,6 +22,9 @@
             <a href="/index" class="btn">Logout</a>    
         </div>
     </nav>
+    {{#if message}}
+        <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
     <h3>View or Register Complaint</h3>
     <div class="login_container">
         <form action="/filecomplaint">

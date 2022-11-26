@@ -173,8 +173,8 @@ exports.history=async(req,res)=>{
         if(err){console.log(err);}
         if(rows.length===0)
         {
-            res.render('historylogin',{
-                message:'Invalid Email ID !!'
+            res.render('userpage1',{
+                message:'No Complaint Exists !'
             })
         }
         else
